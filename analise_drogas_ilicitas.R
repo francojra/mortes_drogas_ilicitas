@@ -42,7 +42,17 @@ view(d)
 
 library(ggplot2)
 
-ggplot()
+d$Year <- as.factor(d$Year) # Transformar a variável Year em fator
+
+g1 <- ggplot(d, aes(x = Year, y = opioides, group = Code)) +
+  geom_line() +
+  geom_point()
+g1
+
+g2 <- ggplot(d, aes(x = Year, y = Cocaina, group = Code)) +
+  geom_line() +
+  geom_point()
+g2
 
 # Referência -------------------------------------------------------------------------------------------------------------------------------
 
