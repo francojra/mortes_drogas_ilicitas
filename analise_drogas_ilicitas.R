@@ -45,13 +45,21 @@ library(ggplot2)
 d$Year <- as.factor(d$Year) # Transformar a variável Year em fator
 
 g1 <- ggplot(d, aes(x = Year, y = opioides, group = Code)) +
-  geom_line() +
-  geom_point()
+  geom_line(size = 1.2) +
+  geom_point(size = 2.5) +
+  labs(x = "Anos",
+       y = "Número de mortes por overdose de Opióides") +
+  theme_minimal(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 60)) 
 g1
 
 g2 <- ggplot(d, aes(x = Year, y = Cocaina, group = Code)) +
-  geom_line() +
-  geom_point()
+  geom_line(size = 1.2) +
+  geom_point(size = 2.5) +
+  labs(x = "Anos",
+       y = "Número de mortes por overdose de Cocaína") +
+  theme_minimal(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 60)) 
 g2
 
 # Referência -------------------------------------------------------------------------------------------------------------------------------
