@@ -16,4 +16,5 @@ names(dados) # Função para verificar todos os nomes das variáveis
 # e cannabis.
 
 # Consumo em excesso ou dependência podem trazer severos impactos sobre a saúde em geral das pessoas
-# e o bem estar mental. Nem todas
+# e o bem estar mental. Nem todas as drogas ilícitas tem impactos similares sobre a saúde e bem estar.
+# O impacto de algumas drogas é bem menos danoso que outras.
