@@ -15,4 +15,5 @@ names(dados) # Função para verificar todos os nomes das variáveis
 # Os prinicpais grupos de drogas ilícitas usados nas estatísticas são opioides, cocaína, anfetaminas
 # e cannabis.
 
-# 
+# Consumo em excesso ou dependência podem trazer severos impactos sobre a saúde em geral das pessoas
+# e o bem estar mental. Nem todas
