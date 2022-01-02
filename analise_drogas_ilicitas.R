@@ -62,6 +62,58 @@ g2 <- ggplot(d, aes(x = Year, y = Cocaina, group = Code)) +
   theme(axis.text.x = element_text(angle = 60)) 
 g2
 
+library(ggplot2) # Pacote para produzir os gráficos
+
+d$Year <- as.factor(d$Year) # Transformar a variável Year em fator
+
+g1 <- ggplot(d, aes(x = Year, y = opioides, group = Code)) +
+  geom_line(size = 0.8) +
+  geom_point(size = 2.5) +
+  labs(x = "Anos",
+       y = "Mortes por overdose de Opióides") +
+  theme_minimal(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 60)) 
+g1
+
+g2 <- ggplot(d, aes(x = Year, y = Cocaina, group = Code)) +
+  geom_line(size = 0.8) +
+  geom_point(size = 2.5) +
+  labs(x = "Anos",
+       y = "Mortes por overdose de Cocaína") +
+  theme_minimal(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 60)) 
+g2
+
+g3 <- ggplot(d, aes(x = Year, y = Anfetamina, group = Code)) +
+  geom_line(size = 0.8) +
+  geom_point(size = 2.5) +
+  labs(x = "Anos",
+       y = "Mortes por overdose de Anfetamina") +
+  theme_minimal(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 60)) 
+g3
+
+g4 <- ggplot(d, aes(x = Year, y = Outras_drogas, group = Code)) +
+  geom_line(size = 0.8) +
+  geom_point(size = 2.5) +
+  labs(x = "Anos",
+       y = "Mortes por overdose - Outras drogas") +
+  theme_minimal(base_size = 15) +
+  theme(axis.text.x = element_text(angle = 60)) 
+g4
+
+library(gridExtra) # Pacote para unir os gráficos em uma janela
+
+plot <- grid.arrange(g1, g2, g3, g4, ncol = 2) # ncol se refere a número de colunas
+
+# Salvar gráfico ---------------------------------------------------------------------------------------------------------------------------
+
+ggsave("plot.pdf", plot, width = 15, height = 15)
+
+# Referência -------------------------------------------------------------------------------------------------------------------------------
+
+# https://ourworldindata.org/illicit-drug-use
+
 # Referência -------------------------------------------------------------------------------------------------------------------------------
 
 # https://ourworldindata.org/illicit-drug-use
