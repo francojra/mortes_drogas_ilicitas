@@ -114,6 +114,3 @@ ggsave("plot.pdf", plot, width = 15, height = 15)
 
 # https://ourworldindata.org/illicit-drug-use
 
-# Referência -------------------------------------------------------------------------------------------------------------------------------
-
-# https://ourworldindata.org/illicit-drug-use
