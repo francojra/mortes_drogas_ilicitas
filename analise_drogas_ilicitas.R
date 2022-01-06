@@ -88,7 +88,7 @@ plot_brasil <- grid.arrange(g1, g2, g3, g4, ncol = 2,  # ncol se refere a númer
 
 # Salvar gráfico ---------------------------------------------------------------------------------------------------------------------------
 
-ggsave("plot_brasil.pdf", plot, width = 15, height = 15)
+ggsave("plot_brasil.pdf", plot_brasil, width = 15, height = 15)
 
 # Referência -------------------------------------------------------------------------------------------------------------------------------
 
