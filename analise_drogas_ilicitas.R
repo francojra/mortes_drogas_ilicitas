@@ -40,28 +40,6 @@ view(d)
 
 # Gráfico ----------------------------------------------------------------------------------------------------------------------------------
 
-library(ggplot2)
-
-d$Year <- as.factor(d$Year) # Transformar a variável Year em fator
-
-g1 <- ggplot(d, aes(x = Year, y = opioides, group = Code)) +
-  geom_line(size = 1.2) +
-  geom_point(size = 2.5) +
-  labs(x = "Anos",
-       y = "Número de mortes por overdose de Opióides") +
-  theme_minimal(base_size = 15) +
-  theme(axis.text.x = element_text(angle = 60)) 
-g1
-
-g2 <- ggplot(d, aes(x = Year, y = Cocaina, group = Code)) +
-  geom_line(size = 1.2) +
-  geom_point(size = 2.5) +
-  labs(x = "Anos",
-       y = "Número de mortes por overdose de Cocaína") +
-  theme_minimal(base_size = 15) +
-  theme(axis.text.x = element_text(angle = 60)) 
-g2
-
 library(ggplot2) # Pacote para produzir os gráficos
 
 d$Year <- as.factor(d$Year) # Transformar a variável Year em fator
@@ -71,7 +49,7 @@ g1 <- ggplot(d, aes(x = Year, y = opioides, group = Code)) +
   geom_point(size = 2.5) +
   labs(x = "Anos",
        y = "Mortes por overdose de Opióides") +
-  theme_minimal(base_size = 15) +
+  theme_minimal(base_size = 13) +
   theme(axis.text.x = element_text(angle = 60)) 
 g1
 
@@ -80,7 +58,7 @@ g2 <- ggplot(d, aes(x = Year, y = Cocaina, group = Code)) +
   geom_point(size = 2.5) +
   labs(x = "Anos",
        y = "Mortes por overdose de Cocaína") +
-  theme_minimal(base_size = 15) +
+  theme_minimal(base_size = 13) +
   theme(axis.text.x = element_text(angle = 60)) 
 g2
 
@@ -89,7 +67,7 @@ g3 <- ggplot(d, aes(x = Year, y = Anfetamina, group = Code)) +
   geom_point(size = 2.5) +
   labs(x = "Anos",
        y = "Mortes por overdose de Anfetamina") +
-  theme_minimal(base_size = 15) +
+  theme_minimal(base_size = 13) +
   theme(axis.text.x = element_text(angle = 60)) 
 g3
 
@@ -98,17 +76,19 @@ g4 <- ggplot(d, aes(x = Year, y = Outras_drogas, group = Code)) +
   geom_point(size = 2.5) +
   labs(x = "Anos",
        y = "Mortes por overdose - Outras drogas") +
-  theme_minimal(base_size = 15) +
+  theme_minimal(base_size = 13) +
   theme(axis.text.x = element_text(angle = 60)) 
 g4
 
 library(gridExtra) # Pacote para unir os gráficos em uma janela
+library(grid) # Pacote que permite usar o argumento de título textGorb
 
-plot <- grid.arrange(g1, g2, g3, g4, ncol = 2) # ncol se refere a número de colunas
+plot_brasil <- grid.arrange(g1, g2, g3, g4, ncol = 2,  # ncol se refere a número de colunas
+                    top = textGrob("Brasil", gp = gpar(fontsize = 22, col = "#4575b4")))
 
 # Salvar gráfico ---------------------------------------------------------------------------------------------------------------------------
 
-ggsave("plot.pdf", plot, width = 15, height = 15)
+ggsave("plot_brasil.pdf", plot, width = 15, height = 15)
 
 # Referência -------------------------------------------------------------------------------------------------------------------------------
 
