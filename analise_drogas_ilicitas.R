@@ -83,8 +83,10 @@ g4
 library(gridExtra) # Pacote para unir os gráficos em uma janela
 library(grid) # Pacote que permite usar o argumento de título textGorb
 
+tg <- textGrob('Brasil', gp = gpar(fontsize = 13, fontface = 'bold'))
+
 plot_brasil <- grid.arrange(g1, g2, g3, g4, ncol = 2,  # ncol se refere a número de colunas
-                    top = textGrob("Brasil", gp = gpar(fontsize = 22, col = "#4575b4")))
+                    top = tg)
 
 # Salvar gráfico ---------------------------------------------------------------------------------------------------------------------------
 
